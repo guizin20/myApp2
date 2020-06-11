@@ -1,0 +1,68 @@
+<ion-header no-header>
+  <ion-toolbar>
+    <ion-segment mod="md" [(ngModel)]="segment" (ionChange)="segmentChanged($event)">
+      <ion-segment-button mode="md" value="0">
+        <ion-label>Login</ion-label>
+      </ion-segment-button>
+      <ion-segment-button mode="md" value="1">
+        <ion-label>Cadastrar</ion-label>
+      </ion-segment-button>
+    </ion-segment>   
+  </ion-toolbar>
+  </ion-header>    
+
+  <ion-content fullscreen class="ion-padding" scroll-y="true"> 
+    <div class="img">
+      <img src="assets/coronavirus.svg"/>
+    </div>
+    
+    <div >
+      
+      <ion-slides #slides pager="false" [options]="sliderOpts" (ionSlideDidChange)="slideShanged(slides)" (ionSlidesDidLoad)="slideShanged(slides)">
+        <ion-slide>
+          
+          <div class="slide-inner ion-padding">
+            
+            <span>Login</span>
+
+            <ion-item class="ion-margin-top" lines="none">
+              <ion-icon name="person"></ion-icon> <ion-input placeholder="Digite seu Email" type="email" [(ngModel)]="userLogin.email"></ion-input>
+            </ion-item>
+
+            <ion-item class="ion-margin-top" lines="none">
+              <ion-icon name="key"></ion-icon> <ion-input placeholder="Digite sua senha" type="password" [(ngModel)]="userLogin.password"></ion-input>
+            </ion-item>
+
+            
+              <ion-button class="ion-margin-top" (click)="login()" color="light" expand="block">Entrar</ion-button>
+          </div>
+        </ion-slide>
+
+        <ion-slide>
+          <div class="slide-inner ion-padding">
+            
+            <span>Cadastre-se</span>
+
+            <ion-item class="ion-margin-top" lines="none">
+              <ion-input placeholder="Digite seu Nome" type="text" [(ngModel)]="userRegister.nome"></ion-input>
+             </ion-item>
+
+            <ion-item class="ion-margin-top" lines="none">
+             <ion-input placeholder="Digite seu Email" type="email" [(ngModel)]="userRegister.email"></ion-input>
+            </ion-item>
+
+            <ion-item class="ion-margin-top" lines="none">
+              <ion-input placeholder="Digite sua senha" type="password" [(ngModel)]="confirm"></ion-input>
+            </ion-item>
+
+            <ion-item class="ion-margin-top" lines="none">
+              <ion-input placeholder="Repita sua senha" type="password" [(ngModel)]="userRegister.password"></ion-input>
+            </ion-item>
+
+            
+              <ion-button class="ion-margin-top" (click)="register()" color="light" expand="block">Cadastrar</ion-button>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  </ion-content>

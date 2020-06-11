@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>COVID-19</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item >
+    <ion-label>Selecione um Estado</ion-label>
+    <ion-select interface="action-sheet" [(ngModel)]="estado" (ionChange)="OnChange($event)" >
+      <ion-select-option value="ac">Acre</ion-select-option>
+      <ion-select-option value="al">Alagoas</ion-select-option>
+      <ion-select-option value="ap">Amapá</ion-select-option>
+      <ion-select-option value="am">Amazonas</ion-select-option>
+      <ion-select-option value="ba">Bahia</ion-select-option>
+      <ion-select-option value="ce">Ceará</ion-select-option>
+      <ion-select-option value="df">Distrito Federal</ion-select-option>
+      <ion-select-option value="es">Espírito Santo</ion-select-option>
+      <ion-select-option value="go">Goiás</ion-select-option>
+      <ion-select-option value="ma">Maranhão</ion-select-option>
+      <ion-select-option value="mt">Mato Grosso</ion-select-option>
+      <ion-select-option value="ms">Mato Grosso do Sul</ion-select-option>
+      <ion-select-option value="mg">Minas Gerais</ion-select-option>
+      <ion-select-option value="pa">Pará</ion-select-option>
+      <ion-select-option value="pb">Paraíba</ion-select-option>
+      <ion-select-option value="pr">Paraná</ion-select-option>
+      <ion-select-option value="pe">Pernambuco</ion-select-option>
+      <ion-select-option value="pi">Piauí</ion-select-option>
+      <ion-select-option value="rj">Rio de Janeiro</ion-select-option>
+      <ion-select-option value="rn">Rio Grande do Norte</ion-select-option>
+      <ion-select-option value="rs">Rio Grande do Sul</ion-select-option>
+      <ion-select-option value="ro">Rondônia</ion-select-option>
+      <ion-select-option value="rr">Roraima</ion-select-option>
+      <ion-select-option value="sc">Santa Catarina</ion-select-option>
+      <ion-select-option value="sp">São Paulo</ion-select-option>
+      <ion-select-option value="se">Sergipe</ion-select-option>
+      <ion-select-option value="to">Tocantins</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+ 
+ 
+  <ion-list *ngFor = "let covid of this.lista_covid">
+  <ion-item>
+  <ion-label>
+    
+    <p>UF: {{covid.uf}}</p>
+    <p>Estado: {{covid.state}}</p>
+    <p>Casos: {{covid.cases}}</p>
+    <p>Mortes: {{covid.deaths}}</p>
+    <p>Suspeitos: {{covid.suspects}}</p>
+    <p>Rejeitados: {{covid.refuses}}</p>
+    <p>Data: {{covid.datetime}}</p>
+  </ion-label>
+</ion-item>
+
+  
+  
+</ion-list>
+</ion-content>

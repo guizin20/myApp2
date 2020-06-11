@@ -1,0 +1,32 @@
+<ion-app>
+<ion-content fullscreen class="ion-padding" scroll-y="false">
+  <ion-slides #slides pager="true" [options]="slideOpts">
+    <ion-slide>
+      <div class="slide">
+        <img src="assets/virus (1).svg"/>
+        <h2>Covid-19</h2>
+        <p>Aplicativo de informações sobre <b>COVID-19</b></p>
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/mundo.svg"/>
+      <h2>Número de infectados?</h2>
+      <p> Fique por dentro do número de infectados por <b>Covid-19</b>. Números atualizados todos os dias.</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/proteger.svg"/>
+      <h2>Como prevenir-se?</h2>
+      <p>Veja como prevenir-se do <b>Covid-19</b>.</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/cel.svg"/>
+      <h2>Vamos lá!</h2>
+      <ion-button (click)="avanca()">Entrar <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>
+</ion-app>
